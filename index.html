@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
     <title>World-Clock</title>
 </head>
 <body>
@@ -18,33 +19,6 @@
         <option value="sydney">Sydney</option>
     </select>
     <footer>This project was coded by Errica Green</footer>
-    <script>
-        function showSelectedCity(event) {
-                if (event.target.value == "paris") {
-                alert (moment()
-                .tz("Europe/Paris")
-                .format(
-                    "[It is] dddd Do MMMM YYYY H:m [in Paris France]"
-                ));
-                }
-                 if (event.target.value == "tokyo") {
-            alert(moment()
-                .tz("Asia/Tokyo")
-                .format(
-                    "[It is] dddd Do MMMM YYYY H:m [in Tokyo Japan]"
-                ));
-                 }
-                 if (event.target.value == "sydney") {
-            alert(moment()
-                .tz("Australia/Sydney")
-                .format(
-                    "[It is] dddd Do MMMM YYYY H:m [in Sydney Australia]"
-                ));
-                 }
-            }
-            let citiesSelect = document.querySelector("#cities");
-
-            citiesSelect.addEventListener("change", showSelectedCity);
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
