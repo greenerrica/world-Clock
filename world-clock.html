@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+    <title>World-Clock</title>
+</head>
+<body>
+    <select id="cities">
+        <option value="">Select a city</option>
+        <option value="paris">Paris</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="sydney">Sydney</option>
+    </select>
+    <script>
+        function showSelectedCity(event) {
+                if (event.target.value == "paris") {
+                alert (moment()
+                .tz("Europe/Paris")
+                .format(
+                    "[It is] dddd Do MMMM YYYY H:m [in Paris France]"
+                ));
+                }
+                 if (event.target.value == "tokyo") {
+            alert(moment()
+                .tz("Asia/Tokyo")
+                .format(
+                    "[It is] dddd Do MMMM YYYY H:m [in Tokyo Japan]"
+                ));
+                 }
+                 if (event.target.value == "sydney") {
+            alert(moment()
+                .tz("Australia/Sydney")
+                .format(
+                    "[It is] dddd Do MMMM YYYY H:m [in Sydney Australia]"
+                ));
+                 }
+            }
+            let citiesSelect = document.querySelector("#cities");
+
+            citiesSelect.addEventListener("change", showSelectedCity);
+    </script>
+</body>
+</html>
