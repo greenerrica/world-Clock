@@ -17,6 +17,9 @@ italyTimeElement.innerHTML = italyTime.format("h:mm:ss [<small>]A[</small>]");
 
 function updatecity(event) {
 let cityTimeZone = event.target.value;
+if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+}
 let cityName = cityTimeZone.replace("_", " ").split("/")[1];
 let cityTime = moment().tz(cityTimeZone);
 let citiesElement = document.querySelector("#cities");
